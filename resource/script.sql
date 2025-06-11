@@ -2,10 +2,10 @@ CREATE DATABASE mentoria_db;
 
 USE mentoria1_db;
 
-DROP TABLE IF EXISTS contato;
+DROP TABLE IF EXISTS contatos;
 
-CREATE TABLE contato (
-	id       BIGINT         NOT NULL                       ,
+CREATE TABLE contatos  (
+	id       BIGINT         NOT NULL AUTO_INCREMENT         ,
 	nome     VARCHAR(100)   NOT NULL                       ,
 	tipo     VARCHAR(50)    NOT NULL DEFAULT('TELEFONE')   ,
 	valor    VARCHAR(255)   NOT NULL                       ,
@@ -13,8 +13,8 @@ CREATE TABLE contato (
 
 );
 
-INSERT INTO contatos (id, nome, tipo, valor)
-VALUES (1, 'joao', 'TELEFONE', '13245634');
+INSERT INTO contatos (nome, tipo, valor)
+VALUES ('joao', 'TELEFONE', '13245634');
 
 SELECT c.id   ,
        c.nome ,
