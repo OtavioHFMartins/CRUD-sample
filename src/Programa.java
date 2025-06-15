@@ -3,7 +3,11 @@ public class Programa {
 
 
         ContatoCRUD contatoCRUD = new ContatoCRUDImpl();
-        testCriacaoContato(contatoCRUD);
+       //  testCriacaoContato(contatoCRUD);
+       // testObterContatos(contatoCRUD);
+        // testObterContatoByid(contatoCRUD, 1);
+        testObterContatoByNome(contatoCRUD, "Otavio");
+
 
     }
 
