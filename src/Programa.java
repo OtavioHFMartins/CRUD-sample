@@ -6,7 +6,8 @@ public class Programa {
        //  testCriacaoContato(contatoCRUD);
        // testObterContatos(contatoCRUD);
         // testObterContatoByid(contatoCRUD, 1);
-        testObterContatoByNome(contatoCRUD, "Otavio");
+        // testObterContatoByNome(contatoCRUD, "Otavio");
+        testUpdateContato(contatoCRUD);
 
 
     }
@@ -35,7 +36,8 @@ public class Programa {
 
     private static void testUpdateContato(ContatoCRUD crud) {
         var contatoAtualizar = crud.readContato(1);
-        contatoAtualizar.setNome("nome atualizado");
+        contatoAtualizar.setValor("11971");
+        contatoAtualizar.setTipo(TipoContato.CELULAR);
         crud.updateContato(contatoAtualizar);
         System.out.println("contato atualizado");
     }

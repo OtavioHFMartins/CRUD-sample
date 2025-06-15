@@ -93,7 +93,24 @@ public class ContatoCRUDImpl implements ContatoCRUD {
 
     @Override
     public void updateContato(Contato contato) {
+        var sql = "UPDATE contatos c " +
+                "SET valor = ?, " +
+                "tipo = ? " +
+                "WHERE c.id = ?";
 
+        try {
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.setString(1,contato.getValor());
+            stmt.setString(2,contato.getTipo().name());
+            stmt.setInt(3,contato.getId());
+
+            int rows = stmt.executeUpdate();
+            System.out.println("Atualização realizada - linhas afetadas:" + rows);
+
+
+        } catch (SQLException e) {
+            throw  new RuntimeException("Ocorreu um erro no: UpdateContato" + e.getMessage());
+        }
     }
 
     @Override
