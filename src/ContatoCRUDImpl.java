@@ -115,6 +115,18 @@ public class ContatoCRUDImpl implements ContatoCRUD {
 
     @Override
     public void deleteContato(Integer id) {
+        var sql = "DELETE FROM contatos WHERE id = ?";
+
+        try {
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.setInt(1, id);
+
+            int rows = stmt.executeUpdate();
+            System.out.println("atualização realizada - linhas afetadas: " + rows);
+
+        } catch (SQLException e) {
+            throw  new RuntimeException("Ocorreu um erro no: DeleteContato" + e.getMessage());
+        }
 
     }
     private  Contato getContato(ResultSet rs) throws SQLException {

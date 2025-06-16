@@ -7,7 +7,8 @@ public class Programa {
        // testObterContatos(contatoCRUD);
         // testObterContatoByid(contatoCRUD, 1);
         // testObterContatoByNome(contatoCRUD, "Otavio");
-        testUpdateContato(contatoCRUD);
+       // testUpdateContato(contatoCRUD);
+        testDelete(contatoCRUD, 3);
 
 
     }
